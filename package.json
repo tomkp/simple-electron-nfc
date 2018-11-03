@@ -1,11 +1,15 @@
 {
   "name": "simple-electron-nfc",
   "version": "1.0.0",
-  "main": "main.js",
+  "main": "lib/main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "npm run compile && electron .",
+    "compile": "babel -d lib/ src/",
+    "compile:watch": "babel -w -d lib/ src/"
   },
   "devDependencies": {
-    "electron": "^3.0.4"
+    "electron": "^3.0.4",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0"
   }
 }
