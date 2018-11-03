@@ -8,10 +8,13 @@ let mainWindow;
 
 function createWindow() {
     // Create the browser window.
-    mainWindow = new BrowserWindow({width: 800, height: 600});
+    mainWindow = new BrowserWindow({width: 640, height: 800, icon: '../public/tomkp.png', title: 'NFC Spy'});
 
     // and load the index.html of the app.
-    mainWindow.loadFile('index.html');
+    const filePath = `${__dirname}/../public/index.html`;
+
+    console.log(`filePath: ${filePath}`);
+    mainWindow.loadFile(filePath);
 
     // Open the DevTools.
     // mainWindow.webContents.openDevTools()
