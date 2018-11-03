@@ -8,8 +8,12 @@
     "compile:watch": "babel -w -d lib/ src/"
   },
   "devDependencies": {
-    "electron": "^3.0.4",
     "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0"
+    "babel-preset-env": "^1.7.0",
+    "electron": "^3.0.4",
+    "electron-rebuild": "^1.8.2"
+  },
+  "dependencies": {
+    "nfc-pcsc": "^0.6.2"
   }
 }
