@@ -28,6 +28,7 @@
     "electron-is-dev": "^1.0.1",
     "electron-publisher-s3": "^20.17.2",
     "nfc-pcsc": "^0.6.2",
+    "normalize.css": "^8.0.0",
     "react": "^16.6.0",
     "react-dev-utils": "^6.1.1",
     "react-dom": "^16.6.0"
