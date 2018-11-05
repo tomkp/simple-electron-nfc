@@ -4,6 +4,8 @@ import './status-bar.css';
 
 export default ({dx = {}, device}) => {
 
+    console.log(`StatusBar`, device, dx);
+
     const cx = dx[device] ? dx[device].card : null;
 
     return <div className="status-bar">

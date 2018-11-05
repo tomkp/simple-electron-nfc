@@ -25,12 +25,12 @@ class App extends Component {
                         dx: dx
                     });
 
-                    // // if this is the only device (or the first)
-                    // if (devices.length === 1) {
-                    //     this.setState({
-                    //         device: device
-                    //     });
-                    // }
+                    // if this is the only device (or the first)
+                    //if (devices.length === 1) {
+                        this.setState({
+                            device: device
+                        });
+                    //}
                 });
               ipc.on('device-deactivated', (event, {device}) => {
                     console.log(`* Device '${device.name}' deactivated`);
@@ -100,7 +100,7 @@ class App extends Component {
                 <div className="Contents">
                     contents
                 </div>
-                <StatusBar/>
+                <StatusBar device={this.state.device} dx={this.state.dx}/>
             </div>
         );
     }

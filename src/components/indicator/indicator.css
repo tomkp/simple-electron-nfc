@@ -9,14 +9,14 @@
   vertical-align: text-top;
 }
 
-.indicator .unknown {
+.indicator.unknown {
   background: #aaa
 }
 
-.indicator .activated, .indicator .inserted {
+.indicator.activated, .indicator.inserted {
   background: var(--green);
 }
 
-.indicator .deactivated, .indicator .removed {
+.indicator.deactivated, .indicator.removed {
   background: var(--red);
 }
