@@ -1,0 +1,12 @@
+
+
+.status-bar {
+
+  background: var(--silver);
+  color: #555;
+  height: 3rem;
+  line-height: 3rem;
+  padding: 0 1rem;
+
+  font-family: "Menlo", "Lucida Console", monospace;
+}

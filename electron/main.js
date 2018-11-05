@@ -6,6 +6,8 @@ const {TouchBarButton, TouchBarLabel, TouchBarSpacer} = TouchBar;
 import path from 'path';
 import isDev from 'electron-is-dev';
 
+import initialiseNfc from './nfc.js';
+
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow;
@@ -15,6 +17,8 @@ function createWindow() {
     mainWindow = new BrowserWindow({
         width: 640,
         height: 800,
+        darkTheme: true,
+        titleBarStyle: "hidden",
         //icon: '../public/assets/icon.png',
         icon: `file://${path.join(__dirname, '../public/assets/icon.png')}`,
         title: 'NFC Spy'
@@ -33,7 +37,8 @@ function createWindow() {
     );
 
     // Open the DevTools.
-    mainWindow.webContents.openDevTools();
+    let webContents = mainWindow.webContents;
+    webContents.openDevTools();
 
     // Emitted when the window is closed.
     mainWindow.on('closed', function () {
@@ -41,7 +46,11 @@ function createWindow() {
         // in an array if your app supports multi windows, this is the time
         // when you should delete the corresponding element.
         mainWindow = null
-    })
+    });
+
+    webContents.on('did-finish-load', () => {
+        initialiseNfc(webContents)
+    });
 }
 
 // This method will be called when Electron has finished
@@ -66,4 +75,4 @@ app.on('activate', function () {
     }
 });
 
-import './nfc.js';
+
